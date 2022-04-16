@@ -15,9 +15,9 @@ if img_file_buffer is not None:
     bytes_data = img_file_buffer.getvalue()
     image = tf.io.decode_image(bytes_data, channels=3) # np array from bitmap=BMP, devide indep data format
     input_shape = (224, 224)
-    array = tf.keras.preprocessing.image.smart_resize( image, 
+    image = tf.keras.preprocessing.image.smart_resize( image, 
                                     input_shape, interpolation='bilinear')
-    array =array/225. # normalize, as model expects
+    array =image/225. # normalize, as model expects
     array = np.expand_dims(array, axis=0) # for input shape (1,224,224,3)
     pred = model.predict(array)
     pred = tf.keras.backend.argmax(pred[0,:,:,:], axis=-1)+1 # need to start with tf. before k

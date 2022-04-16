@@ -1,7 +1,8 @@
 import streamlit as st
 # import pickle
 # import PIL
-import tensorflow
+# import tensorflow
+import pandas as pd
 
 
 # model = pickle.load(open('model1.p', 'rb')) # meets zsh: illegal hardware instruction 

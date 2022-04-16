@@ -6,7 +6,10 @@ import numpy as np # numpy==1.21.5
 import matplotlib.pyplot as plt #matplotlib==3.5.1
 
 
-st.title('hi there. Gimme a pic of the beach')
+st.title('Welcome to TrashNet\'s Trash Vission')
+
+st.subheader('Please upload a picture of the beach.')
+
 img_file_buffer = st.file_uploader("Choose a file")
 
 model = load_model('deployment/model.h5')
@@ -27,6 +30,7 @@ if img_file_buffer is not None:
     # fig.add_subplot(1, 2, 1 ) # throws errors
 
     plt.axis('off')
+    plt.title('Where the trash at:')
     plt.imshow(image,alpha=1.) #resized
     plt.imshow(pred==1,alpha=0.3)
     plt.savefig('mask.png')
@@ -36,10 +40,9 @@ if img_file_buffer is not None:
 
 
 
-st.markdown('ok, the md goes here')
+# st.markdown('ok, the md goes here')
 
 
-# st.subheader('Jane Austen or Edgar Alan Poe?')
 
 # txt = st.text_area('Write your prose here')
 

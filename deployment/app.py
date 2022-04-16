@@ -15,7 +15,7 @@ if img_file_buffer is not None:
     bytes_data = img_file_buffer.getvalue()
     image = tf.io.decode_image(bytes_data, channels=3)
 
-st.markdown(f'type is {type(image)}')
+st.markdown(type(image))
 
 
 # st.subheader('Jane Austen or Edgar Alan Poe?')

@@ -17,14 +17,14 @@ if img_file_buffer is not None:
     input_shape = (224, 224)
     image = tf.keras.preprocessing.image.smart_resize( image, 
                                     input_shape, interpolation='bilinear')
-    array =image/225. # normalize, as model expects
-    array = np.expand_dims(array, axis=0) # for input shape (1,224,224,3)
+    image =image/225. # normalize, as model expects, ans as plt expects
+    array = np.expand_dims(image, axis=0) # for model input shape (1,224,224,3)
     pred = model.predict(array)
     pred = tf.keras.backend.argmax(pred[0,:,:,:], axis=-1)+1 # need to start with tf. before k
     pred = np.reshape(pred, input_shape) # all ready to convert from greyscale to png 
     plt.axis('off')
-    plt.imshow(image,alpha=1.)
-    # plt.imshow(pred==1,alpha=0.5)
+    plt.imshow(image,alpha=1.) #resized
+    plt.imshow(pred==0,alpha=0.2)
     plt.savefig('mask.png')
     plot = PIL.Image.open('mask.png') # 
     # image = PIL.Image.open('deployment/pic.png') # 

@@ -22,7 +22,7 @@ if img_file_buffer is not None:
     # pred = model.predict(array)
     # pred = tf.keras.backend.argmax(pred[0,:,:,:], axis=-1)+1 # need to start with tf. before k
     # pred = np.reshape(pred, input_shape) # all ready to convert from greyscale to png 
-    # image = PIL.Image.open('deployment/pic.png') # 
+    image = PIL.Image.open('deployment/pic.png') # 
     st.image(image)
 
 

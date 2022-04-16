@@ -23,22 +23,12 @@ if img_file_buffer is not None:
     pred = tf.keras.backend.argmax(pred[0,:,:,:], axis=-1)+1 # need to start with tf. before k
     pred = np.reshape(pred, input_shape) # all ready to convert from greyscale to png 
     
-    fig = plt.figure(figsize=(15, 15))
-
-    fig.add_subplot(1, 2, 1 )
     plt.axis('off')
-    plt.title('Your Beach Image')
-    plt.imshow(image)
-
-    fig.add_subplot(1, 2, 2 )
-    plt.axis('off')
-    plt.title('Where The Trash At')
-    plt.imshow(image)
-    plt.imshow(pred==1, alpha=0.3)
-
-    plt.tight_layout()
+    plt.imshow(image,alpha=1.) #resized
+    plt.imshow(pred==1,alpha=0.3)
     plt.savefig('mask.png')
-
+    plot = PIL.Image.open('mask.png') # 
+    # image = PIL.Image.open('deployment/pic.png') # 
     st.image(plot)
 
 

@@ -15,7 +15,7 @@ import pandas as pd
 
 st.title('Who do YOU write like?')
 
-# st.subheader('Jane Austen or Edgar Alan Poe?')
+st.subheader('Jane Austen or Edgar Alan Poe?')
 
 # txt = st.text_area('Write your prose here')
 

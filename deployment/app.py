@@ -1,6 +1,6 @@
 import streamlit as st #streamlit==1.8.1
 import PIL # Pillow==9.0.1
-import tensorflow 
+import tensorflow as tf
 from tensorflow.keras.models import load_model # tensorflow==2.8.0
 import numpy as np # numpy==1.21.5
 
@@ -10,6 +10,11 @@ st.title('hi there. Gimme a pic of the beach')
 img_file_buffer = st.file_uploader("Choose a file")
 
 model = load_model('deployment/model.h5')
+
+if img_file_buffer is not None:
+    bytes_data = img_file_buffer.getvalue()
+    image = np.array(tf.io.decode_image(bytes_data, channels=3))
+
 
 # st.subheader('Jane Austen or Edgar Alan Poe?')
 

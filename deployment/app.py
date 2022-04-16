@@ -3,7 +3,7 @@ import PIL # Pillow==9.0.1
 import tensorflow as tf
 from tensorflow.keras.models import load_model # tensorflow==2.8.0
 import numpy as np # numpy==1.21.5
-
+import matplotlib.pyplot as plt #matplotlib==3.5.1
 
 
 st.title('hi there. Gimme a pic of the beach')

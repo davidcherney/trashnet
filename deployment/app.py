@@ -13,15 +13,18 @@ model = load_model('deployment/model.h5')
 
 if img_file_buffer is not None:
     bytes_data = img_file_buffer.getvalue()
-    # array = tf.io.decode_image(bytes_data, channels=3) # np array from bitmap=BMP, devide indep data format
-    # input_shape = (224, 224)
-    # array = tf.keras.preprocessing.image.smart_resize( array, 
-    #                                 input_shape, interpolation='bilinear')
-    # array =array/225. # normalize, as model expects
-    # array = np.expand_dims(array, axis=0) # for input shape (1,224,224,3)
-    # pred = model.predict(array)
-    # pred = tf.keras.backend.argmax(pred[0,:,:,:], axis=-1)+1 # need to start with tf. before k
-    # pred = np.reshape(pred, input_shape) # all ready to convert from greyscale to png 
+    array = tf.io.decode_image(bytes_data, channels=3) # np array from bitmap=BMP, devide indep data format
+    input_shape = (224, 224)
+    array = tf.keras.preprocessing.image.smart_resize( array, 
+                                    input_shape, interpolation='bilinear')
+    array =array/225. # normalize, as model expects
+    array = np.expand_dims(array, axis=0) # for input shape (1,224,224,3)
+    pred = model.predict(array)
+    pred = tf.keras.backend.argmax(pred[0,:,:,:], axis=-1)+1 # need to start with tf. before k
+    pred = np.reshape(pred, input_shape) # all ready to convert from greyscale to png 
+    plt.axis('off')
+    plt.imshow(pred)
+    plt.savefig('mask.png')
     image = PIL.Image.open('deployment/pic.png') # 
     st.image(image)
 

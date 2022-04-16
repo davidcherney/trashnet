@@ -24,6 +24,8 @@ if img_file_buffer is not None:
     pred = np.reshape(pred, input_shape) # all ready to convert from greyscale to png 
     
     fig = plt.figure(figsize=(15, 15))
+    fig.add_subplot(1, 2, 1 )
+
     plt.axis('off')
     plt.imshow(image,alpha=1.) #resized
     plt.imshow(pred==1,alpha=0.3)

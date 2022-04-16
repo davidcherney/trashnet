@@ -13,7 +13,9 @@ model = load_model('deployment/model.h5')
 
 if img_file_buffer is not None:
     bytes_data = img_file_buffer.getvalue()
-    image = np.array(tf.io.decode_image(bytes_data, channels=3))
+    image = tf.io.decode_image(bytes_data, channels=3)
+
+st.markdown('markdown is here')
 
 
 # st.subheader('Jane Austen or Edgar Alan Poe?')

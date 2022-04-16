@@ -13,8 +13,9 @@ model = load_model('deployment/model.h5')
 
 if img_file_buffer is not None:
     bytes_data = img_file_buffer.getvalue()
-    # image = tf.io.decode_image(bytes_data, channels=3)
-    image = PIL.Image.open('deployment/pic.png')
+    array = tf.io.decode_image(bytes_data, channels=3)/255 # the is what read_image_p would give out. 
+    pred = model.predict(np.expand_dims(array, axis=0))
+    image = PIL.Image.open('deployment/pic.png') # 
     st.image(image)
 
 

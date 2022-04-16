@@ -1,9 +1,9 @@
 import streamlit as st #streamlit==1.8.1
-import PIL 
-
+import PIL # Pillow==9.0.1
+from tensorflow.keras.models import load_model # tensorflow==2.8.0
 st.title('hi there')
 
-# model = load_model('model.h5')
+model = load_model('model.h5')
 
 # st.subheader('Jane Austen or Edgar Alan Poe?')
 

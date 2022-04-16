@@ -5,10 +5,10 @@ import pandas as pd
 import json
 import altair as alt
 import PIL
-# from tensorflow.keras.models import load_model
-# from tensorflow.keras.utils import CustomObjectScope
-# from tensorflow.keras.initializers import glorot_uniform
-# from tensorflow.keras.preprocessing import image
+from tensorflow.keras.models import load_model
+from tensorflow.keras.utils import CustomObjectScope
+from tensorflow.keras.initializers import glorot_uniform
+from tensorflow.keras.preprocessing import image
 
 
 

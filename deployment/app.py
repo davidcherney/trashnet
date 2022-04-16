@@ -31,5 +31,5 @@ st.title('hi there')
 # then run model on the image and use output
 
 # Displays an image:
-# image = PIL.Image.open('pic.png')
-# st.image(image)
+image = PIL.Image.open('pic.png')
+st.image(image)

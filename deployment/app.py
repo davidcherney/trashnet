@@ -25,7 +25,8 @@ if img_file_buffer is not None:
     plt.axis('off')
     plt.imshow(pred)
     plt.savefig('mask.png')
-    image = PIL.Image.open('deployment/pic.png') # 
+    image = PIL.Image.open('mask.png') # 
+    # image = PIL.Image.open('deployment/pic.png') # 
     st.image(image)
 
 

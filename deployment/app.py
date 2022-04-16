@@ -1,7 +1,12 @@
 import streamlit as st #streamlit==1.8.1
 import PIL # Pillow==9.0.1
 from tensorflow.keras.models import load_model # tensorflow==2.8.0
+import numpy as np # numpy==1.21.5
+
+
+
 st.title('hi there')
+img_file_buffer = st.file_uploader("Choose a file")
 
 model = load_model('deployment/model.h5')
 

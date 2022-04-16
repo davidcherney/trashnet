@@ -20,6 +20,8 @@ if img_file_buffer is not None:
     array =array/225. # normalize, as model expects
     array = np.expand_dims(array, axis=0) # for input shape (1,224,224,3)
     pred = model.predict(array)
+    pred = tf.keras.backend.argmax(pred[0,:,:,:], axis=-1)+1 # need to start with tf. before k
+    pred = np.reshape(pred, input_shape) # all ready to convert from greyscale to png 
     image = PIL.Image.open('deployment/pic.png') # 
     st.image(image)
 

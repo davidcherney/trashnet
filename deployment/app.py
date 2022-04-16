@@ -23,7 +23,7 @@ if img_file_buffer is not None:
     pred = tf.keras.backend.argmax(pred[0,:,:,:], axis=-1)+1 # need to start with tf. before k
     pred = np.reshape(pred, input_shape) # all ready to convert from greyscale to png 
     plt.axis('off')
-    plt.imshow(image)
+    plt.imshow(image,alpha=1.)
     plt.imshow(pred==1,alpha=0.2)
     plt.savefig('mask.png')
     plot = PIL.Image.open('mask.png') # 

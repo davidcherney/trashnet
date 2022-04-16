@@ -38,6 +38,13 @@ if img_file_buffer is not None:
     # image = PIL.Image.open('deployment/pic.png') # 
     st.image(plot)
 
+    plt.axis('off')
+    plt.title('Your image')
+    plt.imshow(image,alpha=1.) #resized
+    plt.savefig('image.png')
+    plot = PIL.Image.open('image.png') # 
+    # image = PIL.Image.open('deployment/pic.png') # 
+    st.image(plot)
 
 
 # st.markdown('ok, the md goes here')

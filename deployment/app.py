@@ -30,7 +30,7 @@ if img_file_buffer is not None:
     # fig.add_subplot(1, 2, 1 ) # throws errors
 
     plt.axis('off')
-    plt.title('Where the trash at:')
+    plt.title('Where the trash at:',fontdict={'fontsize': 30})
     plt.imshow(image,alpha=1.) #resized
     plt.imshow(pred==1,alpha=0.3)
     plt.savefig('mask.png')
@@ -39,7 +39,7 @@ if img_file_buffer is not None:
     st.image(plot)
 
     plt.axis('off')
-    plt.title('Your image')
+    plt.title('Your image',fontdict={'fontsize': 30})
     plt.imshow(image,alpha=1.) #resized
     plt.savefig('image.png')
     plot = PIL.Image.open('image.png') # 

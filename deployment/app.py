@@ -37,6 +37,7 @@ if img_file_buffer is not None:
     # image = PIL.Image.open('deployment/pic.png') # 
     st.image(plot)
 
+    fig = plt.figure(figsize=(15, 15))
     plt.axis('off')
     plt.title('Where the trash at:',fontdict={'fontsize': 30})
     plt.imshow(image,alpha=1.) #resized

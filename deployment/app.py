@@ -12,7 +12,7 @@ st.subheader('Please upload a picture of the beach.')
 
 st.subheader('If you do not have one, you may use mine:')
 
-give = PIL.Image.open('000008.jpg') 
+# give = PIL.Image.open('000008.jpg') 
 
 # st.image(give)
 

@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt #matplotlib==3.5.1
 
 st.title('Welcome to TrashNet\'s Trash Vission')
 
-st.subheader('Please upload a picture of the beach.')
+st.header('Please upload a picture of the beach.')
 
 st.subheader('If you do not have one, you may use mine:')
 

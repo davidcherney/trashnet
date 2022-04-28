@@ -10,7 +10,7 @@ st.title('Welcome to TrashNet\'s Trash Vission')
 
 st.header('Please upload a picture of the beach.')
 
-st.subheader('If you do not have one, you may use mine:')
+st.subheader('(If you do not have one handy, you may use mine:)')
 
 give = PIL.Image.open('deployment/000008.jpg') 
 

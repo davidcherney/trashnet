@@ -10,6 +10,11 @@ st.title('Welcome to TrashNet\'s Trash Vission')
 
 st.subheader('Please upload a picture of the beach.')
 
+st.subheader('If you do not have one, you may use mine:')
+
+give = PIL.Image.open('000008.jpg') 
+st.image(give)
+
 img_file_buffer = st.file_uploader("Choose a file")
 
 model = load_model('deployment/model.h5')
